@@ -1,11 +1,11 @@
 import java.awt.image.*; 
+
 import javax.imageio.*;
+//for 3.3 versionn
 import java.net.*;
 import java.io.*;
-
-
 // Port we are receiving.
-int port = 9100; 
+int port = 8000; 
 DatagramSocket ds; 
 // A byte array to read into (max size of 65536, could be smaller)
 byte[] buffer = new byte[65536]; 
@@ -13,13 +13,13 @@ byte[] buffer = new byte[65536];
 PImage video;
 
 void setup() {
-  size(400,300);
+  size(640,480);
   try {
     ds = new DatagramSocket(port);
   } catch (SocketException e) {
     e.printStackTrace();
   } 
-  video = createImage(320,240,RGB);
+  video = createImage(640,480,RGB);
 }
 
  void draw() {
